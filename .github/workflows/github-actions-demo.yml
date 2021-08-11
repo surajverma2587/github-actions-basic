@@ -1,7 +1,7 @@
 name: GitHub Actions Basic
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  GitHub Action Job Name:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -14,4 +14,8 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Install node packages
+        run: npm install
+      - name: Run unit tests
+        run: npm run test
       - run: echo "🍏 This job's status is ${{ job.status }}."
